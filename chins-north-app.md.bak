@@ -1,0 +1,195 @@
+# Chins North — Clean Air Solutions App
+## Claude Code Build Prompt
+
+---
+
+## Business Overview
+
+**Business:** CHINS NORTH™ — Clean Air Solutions
+**Location:** Greater Houston, TX
+**Contact:** +1 (281) 687-7575
+**TikTok:** @chinsnorth7
+**Tagline:** *"Clean air is an investment, not a luxury."*
+
+**Services:**
+- Full air duct cleaning (supply & return)
+- HVAC unit cleaning & upkeep
+- Mold inspection & treatment (visual / non-invasive)
+- Dryer vent cleaning
+- Preventative maintenance services
+- FREE system inspection with every full air duct cleaning
+- Optional HVAC anti-microbial sanitation & deodorization (complimentary with full service)
+
+**Brand Colors:**
+- Primary green: `#2D6A4F` (dark forest green, from logo)
+- Accent green: `#52B788` (mid green)
+- White: `#FFFFFF`
+- Off-white background: `#F8F9FA`
+- Dark text: `#1A1A1A`
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js 15 App Router
+- **Styling:** Tailwind CSS + shadcn/ui
+- **Language:** TypeScript
+- **Package manager:** pnpm
+- **Icons:** lucide-react
+- **Design Skill:** v0-ui (load `/mnt/skills/user/v0-ui/SKILL.md` before writing any JSX)
+
+---
+
+## Pages & Routes
+
+### `/` — Landing Page (Home)
+Hero section with:
+- CHINS NORTH logo (text-based, styled with brand colors)
+- Headline: "Breathe Cleaner Air. Live Better."
+- Subheadline: "Professional duct cleaning, mold remediation & HVAC upkeep for Greater Houston homes."
+- Two CTAs: **"Book a Free Inspection"** (primary green button) + **"Call Now: (281) 687-7575"** (outlined)
+- Trust badges: "Licensed Technicians", "HVAC Code Compliant", "Greater Houston Serving"
+
+Services section:
+- 6 service cards with lucide-react icons, green accent, short 1-line descriptions
+- FREE inspection callout banner (green background, white text)
+
+Why Choose Us section:
+- 3 points with checkmark icons:
+  - Highly knowledgeable technicians with extensive field experience
+  - Work performed in line with HVAC code standards and best practices
+  - Focused on proper airflow, cleanliness, and long-term system health
+
+Approach section:
+- 3-step visual: Inspect → Identify → Improve
+- Brief copy under each step
+
+Testimonials section (static, 3 cards — placeholder names, Houston-area, 5-star)
+
+CTA footer banner: "Ready for cleaner air?" + Book button
+
+### `/services` — Services Detail Page
+Full breakdown of each service with:
+- Icon + title + description (2–3 sentences each)
+- "What's included" bullet list per service
+- Pricing note: "Contact us for a free quote"
+- CTA per card: "Schedule This Service"
+
+### `/booking` — Booking / Contact Form
+Fields:
+- Full Name
+- Phone Number
+- Email
+- Address (Street, City, ZIP)
+- Service Type (dropdown: Air Duct Cleaning, HVAC Upkeep, Mold Inspection, Dryer Vent, Preventative Maintenance, Not Sure)
+- Preferred Date (date picker)
+- Preferred Time (Morning / Afternoon / Evening toggle)
+- Message / Notes (optional textarea)
+- Submit button: "Request Free Inspection"
+
+On submit: show success state ("We'll call you within 24 hours to confirm your appointment.")
+Form validation: all required fields, phone format check.
+No backend needed — use a `mailto:` or `formspree` action for MVP, or leave a `// TODO: connect to backend` comment.
+
+### `/about` — About Page
+- Company mission paragraph
+- "Our Approach" section (Inspection-first, system-focused)
+- Goal statement: "Our goal is to improve life quality from within the property through preventive maintenance of your HVAC system."
+- Photo placeholder section (use clean placeholder images — no blobs)
+- Contact info card
+
+### `/faq` — FAQ Page
+Pre-populate with 8–10 relevant Q&As, e.g.:
+- How often should I clean my air ducts?
+- What's included in the free inspection?
+- Do you service commercial properties?
+- How long does a full duct cleaning take?
+- Is mold remediation safe for my family?
+- What areas do you serve?
+- How is CHINS NORTH different from competitors?
+- Do I need to be home during service?
+
+Use shadcn `Accordion` component for collapse/expand.
+
+---
+
+## Global Components
+
+### `<Header />`
+- CHINS NORTH logo (left)
+- Nav links: Home, Services, FAQ, About, Book Now
+- Mobile: hamburger menu (Sheet component from shadcn)
+- Sticky on scroll, white background, subtle shadow
+
+### `<Footer />`
+- Logo + tagline
+- Quick links
+- Contact: phone + "Serving Greater Houston"
+- Copyright line
+
+### `<BookingCTA />` — Reusable floating/inline CTA
+Used at bottom of every page. Green background, white text, phone number + Book button.
+
+---
+
+## Design Rules (from v0-ui skill)
+
+- Mobile-first, min 16px text inputs, min 44px touch targets
+- No gradient blobs — use clean white/green sections with real spacing
+- Semantic HTML: `<main>`, `<header>`, `<nav>`, `<section>`
+- Consistent icons: 20px or 24px lucide-react only
+- Split into focused components — never one giant `page.tsx`
+- Green (#2D6A4F) for primary actions, light green tints for backgrounds
+- Typography: clean sans-serif, bold headings, readable body
+
+---
+
+## File Structure
+
+```
+app/
+  layout.tsx
+  page.tsx                  ← Home
+  services/page.tsx
+  booking/page.tsx
+  about/page.tsx
+  faq/page.tsx
+components/
+  Header.tsx
+  Footer.tsx
+  BookingCTA.tsx
+  ServiceCard.tsx
+  TestimonialCard.tsx
+  BookingForm.tsx
+  HeroSection.tsx
+  ApproachSteps.tsx
+  WhyChooseUs.tsx
+  FaqAccordion.tsx
+public/
+  logo.svg (or text-based component)
+```
+
+---
+
+## Implementation Order
+
+1. Read `/mnt/skills/user/v0-ui/SKILL.md` first
+2. Scaffold Next.js project with pnpm + shadcn init
+3. Build `Header` + `Footer` components
+4. Build Home page (`/`) — this is the most important page
+5. Build `BookingForm` + `/booking` page
+6. Build `/services` page
+7. Build `/faq` page with Accordion
+8. Build `/about` page
+9. Wire `BookingCTA` into all pages
+10. Final pass: mobile responsiveness check on all pages
+
+---
+
+## Notes
+
+- This is an MVP — no auth, no dashboard, no CMS needed
+- Keep it fast: minimal JS, no heavy animations
+- The booking form doesn't need a live backend — `formspree` or mailto fallback is fine
+- Do not install unnecessary deps — shadcn + lucide + tailwind covers everything
+- Brand voice: professional, trustworthy, Houston-local, health-focused
