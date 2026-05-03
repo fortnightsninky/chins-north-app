@@ -34,11 +34,34 @@ export default function BookingForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would submit to a backend
-    // For MVP, we'll just show success state
-    setIsSubmitted(true);
+
+    try {
+      // Formspree endpoint - replace with your Formspree form ID
+      const formspreeEndpoint = 'https://formspree.io/f/your-form-id-here';
+
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Booking Request: ${formData.fullName} - ${formData.serviceType}`,
+          _replyto: formData.email,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert('Failed to submit booking. Please try again or call us at (281) 687-7575.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Network error. Please try again or call us at (281) 687-7575.');
+    }
   };
 
   if (isSubmitted) {

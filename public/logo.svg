@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <rect x="0" y="8" width="44" height="44" rx="8" fill="#2D6A4F"/>
+  <path d="M22 18 L22 42 M14 26 L22 18 L30 26" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 36 Q22 30 28 36" stroke="#52B788" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <text x="56" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#2D6A4F" letter-spacing="-0.5">CHINS</text>
+  <text x="56" y="50" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#52B788" letter-spacing="-0.5">NORTH</text>
+  <text x="160" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" fill="#6B7280" letter-spacing="2">CLEAN AIR</text>
+  <text x="160" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" fill="#6B7280" letter-spacing="2">SOLUTIONS</text>
+</svg>

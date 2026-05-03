@@ -1,14 +1,20 @@
 import { LucideIcon } from "lucide-react";
-import Link from "next/link";
 
 interface ServiceCardProps {
   icon: LucideIcon;
   title: string;
   description: string;
   features: string[];
+  onScheduleClick?: () => void;
 }
 
-export default function ServiceCard({ icon: Icon, title, description, features }: ServiceCardProps) {
+export default function ServiceCard({
+  icon: Icon,
+  title,
+  description,
+  features,
+  onScheduleClick,
+}: ServiceCardProps) {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
       <div className="flex items-start gap-4">
@@ -32,12 +38,12 @@ export default function ServiceCard({ icon: Icon, title, description, features }
             <span className="text-sm font-medium text-[#2D6A4F]">
               Contact for free quote
             </span>
-            <Link
-              href="/booking"
-              className="bg-[#2D6A4F] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#24523d] transition-colors"
+            <button
+              onClick={onScheduleClick}
+              className="bg-[#2D6A4F] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#24523d] transition-colors cursor-pointer"
             >
               Schedule
-            </Link>
+            </button>
           </div>
         </div>
       </div>

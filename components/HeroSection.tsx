@@ -1,7 +1,10 @@
 import { CheckCircle, Phone } from "lucide-react";
-import Link from "next/link";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  onScheduleClick?: () => void;
+}
+
+export default function HeroSection({ onScheduleClick }: HeroSectionProps) {
   const trustBadges = [
     "Licensed Technicians",
     "HVAC Code Compliant",
@@ -10,22 +13,23 @@ export default function HeroSection() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] leading-tight tracking-tighter">
                 Breathe Cleaner Air.
                 <span className="block text-[#2D6A4F]">Live Better.</span>
               </h1>
-              <p className="text-lg text-gray-600 mt-6 max-w-lg">
-                Professional duct cleaning, mold remediation & HVAC upkeep for Greater Houston homes.
+              <p className="text-lg text-gray-600 mt-6 max-w-lg leading-relaxed">
+                Professional duct cleaning, mold remediation & HVAC upkeep for
+                Greater Houston homes.
               </p>
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               {trustBadges.map((badge) => (
                 <div
                   key={badge}
@@ -39,12 +43,12 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/booking"
-                className="bg-[#2D6A4F] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#24523d] transition-colors text-center"
+              <button
+                onClick={onScheduleClick}
+                className="bg-[#2D6A4F] text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#24523d] transition-colors text-center cursor-pointer"
               >
                 Book a Free Inspection
-              </Link>
+              </button>
               <a
                 href="tel:+12816877575"
                 className="border-2 border-[#2D6A4F] text-[#2D6A4F] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#2D6A4F]/5 transition-colors flex items-center justify-center gap-2"
@@ -64,7 +68,8 @@ export default function HeroSection() {
                     FREE Inspection Included
                   </h3>
                   <p className="text-gray-600">
-                    Every full air duct cleaning comes with a complimentary system inspection.
+                    Every full air duct cleaning comes with a complimentary
+                    system inspection.
                   </p>
                 </div>
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -72,7 +77,8 @@ export default function HeroSection() {
                     Anti-Microbial Treatment
                   </h3>
                   <p className="text-gray-600">
-                    Optional sanitation & deodorization included with full service.
+                    Optional sanitation & deodorization included with full
+                    service.
                   </p>
                 </div>
               </div>
