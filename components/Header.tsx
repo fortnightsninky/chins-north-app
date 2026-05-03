@@ -16,12 +16,12 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="CHINS NORTH Clean Air Solutions"
-              width={180}
-              height={40}
+              width={44}
+              height={44}
               priority
-              className="h-9 md:h-10 w-auto"
+              className="h-10 w-10 md:h-12 md:w-12 rounded-lg"
             />
           </div>
 

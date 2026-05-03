@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -6,10 +7,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-10 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-[#2D6A4F] flex items-center justify-center">
-                <span className="text-white font-bold text-lg">CN</span>
-              </div>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="CHINS NORTH"
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-lg"
+              />
               <div>
                 <h3 className="text-xl font-bold">
                   CHINS <span className="text-[#52B788]">NORTH</span>
