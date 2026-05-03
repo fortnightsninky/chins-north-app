@@ -56,7 +56,7 @@ export default function Footer() {
                 alt="CHINS NORTH"
                 width={56}
                 height={56}
-                className="h-14 w-14 rounded-lg"
+                className="h-20 w-20 rounded-lg"
               />
               <div>
                 <h3 className="text-xl font-bold">
