@@ -1,6 +1,49 @@
 import Image from "next/image";
 import { Phone, MapPin } from "lucide-react";
 
+function EPABadge() {
+  return (
+    <div className="flex items-center gap-3">
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="EPA Certified"
+      >
+        <circle cx="20" cy="20" r="19" stroke="#52B788" strokeWidth="2" />
+        <text
+          x="20"
+          y="16"
+          textAnchor="middle"
+          fill="#52B788"
+          fontSize="9"
+          fontWeight="700"
+          fontFamily="system-ui, sans-serif"
+        >
+          EPA
+        </text>
+        <text
+          x="20"
+          y="27"
+          textAnchor="middle"
+          fill="#9ca3af"
+          fontSize="5.5"
+          fontWeight="600"
+          fontFamily="system-ui, sans-serif"
+        >
+          CERTIFIED
+        </text>
+      </svg>
+      <div>
+        <p className="text-white text-sm font-semibold">EPA Certified</p>
+        <p className="text-gray-500 text-xs">Environmental Protection Agency</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A] text-white">
@@ -23,7 +66,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm">
-              Professional duct cleaning, mold remediation & HVAC upkeep for
+              Professional duct cleaning, mold remediation &amp; HVAC upkeep for
               Greater Houston homes.
             </p>
             <p className="text-[#52B788] italic text-sm">
@@ -34,17 +77,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
-              <li className="text-gray-400 text-sm">Full Air Duct Cleaning</li>
-              <li className="text-gray-400 text-sm">
-                HVAC Unit Cleaning & Upkeep
-              </li>
-              <li className="text-gray-400 text-sm">
-                Mold Inspection & Treatment
-              </li>
+              <li className="text-gray-400 text-sm">Duct Cleaning</li>
+              <li className="text-gray-400 text-sm">Preventative Maintenance</li>
               <li className="text-gray-400 text-sm">Dryer Vent Cleaning</li>
-              <li className="text-gray-400 text-sm">
-                Preventative Maintenance
-              </li>
+              <li className="text-gray-400 text-sm">Mold Removal</li>
+              <li className="text-gray-400 text-sm">Unit Deodorization &amp; Sanitation</li>
             </ul>
           </div>
 
@@ -74,15 +111,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} CHINS NORTH&trade; &mdash; Clean
-            Air Solutions. All rights reserved.
-          </p>
-          <p className="text-gray-600 text-xs mt-2">
-            Licensed technicians &bull; HVAC code compliant &bull; Greater
-            Houston serving
-          </p>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <EPABadge />
+            <div className="text-center md:text-right">
+              <p className="text-gray-500 text-sm">
+                &copy; {new Date().getFullYear()} CHINS NORTH&trade; &mdash; Clean
+                Air Solutions. All rights reserved.
+              </p>
+              <p className="text-gray-600 text-xs mt-1">
+                Licensed technicians &bull; HVAC code compliant &bull; Greater Houston
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

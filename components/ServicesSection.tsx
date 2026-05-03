@@ -1,4 +1,4 @@
-import { Wind, Droplets, ShieldCheck, Fan, Thermometer, Zap } from "lucide-react";
+import { Wind, ShieldCheck, Fan, Droplets, Sparkles } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 
 interface ServicesSectionProps {
@@ -9,69 +9,33 @@ export default function ServicesSection({ onScheduleClick }: ServicesSectionProp
   const services = [
     {
       icon: Wind,
-      title: "Full Air Duct Cleaning",
-      description: "Complete cleaning of supply & return air ducts for optimal airflow.",
-      features: [
-        "Supply & return duct cleaning",
-        "Debris removal",
-        "Airflow optimization",
-        "FREE system inspection included",
-      ],
-    },
-    {
-      icon: Thermometer,
-      title: "HVAC Unit Cleaning & Upkeep",
-      description: "Professional cleaning and maintenance of your HVAC system.",
-      features: [
-        "Coil cleaning",
-        "Filter replacement",
-        "System inspection",
-        "Performance testing",
-      ],
-    },
-    {
-      icon: Droplets,
-      title: "Mold Inspection & Treatment",
-      description: "Visual, non-invasive mold detection and safe remediation.",
-      features: [
-        "Visual inspection",
-        "Non-invasive testing",
-        "Safe treatment",
-        "Prevention recommendations",
-      ],
-    },
-    {
-      icon: Fan,
-      title: "Dryer Vent Cleaning",
-      description: "Prevent fire hazards with professional dryer vent cleaning.",
-      features: [
-        "Lint removal",
-        "Vent inspection",
-        "Fire hazard prevention",
-        "Efficiency improvement",
-      ],
+      title: "Duct Cleaning",
+      description: "Full supply and return duct cleaning to restore airflow and indoor air quality.",
+      onScheduleClick,
     },
     {
       icon: ShieldCheck,
       title: "Preventative Maintenance",
-      description: "Regular upkeep to extend system life and prevent issues.",
-      features: [
-        "Seasonal checkups",
-        "Component inspection",
-        "Early problem detection",
-        "Extended system lifespan",
-      ],
+      description: "Filter replacement, drain line flush, and coil cleaning to keep your system running right.",
+      onScheduleClick,
     },
     {
-      icon: Zap,
-      title: "Anti-Microbial Sanitation",
-      description: "Optional sanitation & deodorization for cleaner air.",
-      features: [
-        "Microbial treatment",
-        "Odor elimination",
-        "Air quality improvement",
-        "Complimentary with full service",
-      ],
+      icon: Fan,
+      title: "Dryer Vent Cleaning",
+      description: "Lint and debris removal to prevent fire hazards and improve dryer performance.",
+      onScheduleClick,
+    },
+    {
+      icon: Droplets,
+      title: "Mold Removal",
+      description: "Safe, non-invasive mold treatment to protect your home and air quality.",
+      onScheduleClick,
+    },
+    {
+      icon: Sparkles,
+      title: "Unit Deodorization & Sanitation",
+      description: "Anti-microbial treatment to eliminate odors and sanitize your HVAC system.",
+      onScheduleClick,
     },
   ];
 
@@ -83,37 +47,15 @@ export default function ServicesSection({ onScheduleClick }: ServicesSectionProp
             Our Services
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive clean air solutions for your home or business.
+            Clean air solutions for Greater Houston homes and businesses.
           </p>
         </div>
 
-        {/* FREE Inspection Banner */}
-        <div className="bg-[#2D6A4F] text-white rounded-2xl p-6 mb-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                FREE System Inspection
-              </h3>
-              <p className="text-[#D1FAE5]">
-                Included with every full air duct cleaning service.
-              </p>
-            </div>
-            <button
-              onClick={onScheduleClick}
-              className="bg-white text-[#2D6A4F] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap cursor-pointer"
-            >
-              Schedule Your Free Inspection
-            </button>
-          </div>
-        </div>
-
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <ServiceCard
               key={service.title}
               {...service}
-              onScheduleClick={onScheduleClick}
             />
           ))}
         </div>

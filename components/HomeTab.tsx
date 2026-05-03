@@ -10,22 +10,22 @@ interface HomeTabProps {
 export default function HomeTab({ onScheduleClick }: HomeTabProps) {
   const testimonials = [
     {
-      name: "Michael R.",
+      name: "Betty",
+      location: "Houston, TX",
+      rating: 5,
+      text: "They did a thorough job on my ducts and took the time to explain everything. My allergies have improved noticeably since the cleaning.",
+    },
+    {
+      name: "Wasim",
       location: "Katy, TX",
       rating: 5,
-      text: "CHINS NORTH transformed our home's air quality. The technicians were professional and thorough. Highly recommend!",
+      text: "Professional and honest. They showed me exactly what needed attention and didn't try to upsell me on things I didn't need.",
     },
     {
-      name: "Sarah L.",
+      name: "Wallace",
       location: "Sugar Land, TX",
       rating: 5,
-      text: "Our HVAC system runs so much better after their maintenance service. The free inspection was incredibly helpful.",
-    },
-    {
-      name: "James T.",
-      location: "The Woodlands, TX",
-      rating: 5,
-      text: "Great service, fair pricing, and they actually explained everything they were doing. Will use them again.",
+      text: "The dryer vent cleaning made a real difference. Dryer runs way more efficient now and I feel safer knowing the lint buildup is gone.",
     },
   ];
 
