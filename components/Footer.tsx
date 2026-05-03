@@ -11,9 +11,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="CHINS NORTH"
-                width={40}
-                height={40}
-                className="h-10 w-10 rounded-lg"
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-lg"
               />
               <div>
                 <h3 className="text-xl font-bold">

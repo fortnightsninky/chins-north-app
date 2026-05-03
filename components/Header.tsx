@@ -18,10 +18,10 @@ export default function Header({ activeTab, onTabChange }: HeaderProps) {
             <Image
               src="/logo.png"
               alt="CHINS NORTH Clean Air Solutions"
-              width={44}
-              height={44}
+              width={160}
+              height={56}
               priority
-              className="h-10 w-10 md:h-12 md:w-12 rounded-lg"
+              className="h-14 w-14 md:h-16 md:w-16 rounded-lg"
             />
           </div>
 
